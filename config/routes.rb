@@ -69,3 +69,4 @@ get 'category/:id/posts', to: 'categories#posts'
 
   resources :posts
 end
+# 
