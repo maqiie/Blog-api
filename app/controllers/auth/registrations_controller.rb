@@ -78,24 +78,7 @@ class Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
   end
   
 
-  # def create_profile(user)
-  #   Profile.transaction do
-  #     profile = Profile.create(
-  #       user: user,
-  #       first_name: user.name,
-  #       bio: 'Default bio',
-  #       nickname: user.nickname, # Assign the nickname from user registration
-  #       image: user.image # Assign the image URL from user registration
-  #     )
-  
-  #     if profile.valid?
-  #       Rails.logger.info("Profile created successfully: #{profile.inspect}")
-  #     else
-  #       Rails.logger.error("Error creating profile: #{profile.errors.full_messages}")
-  #       raise ActiveRecord::Rollback
-  #     end
-  #   end
-  # end
+
   
 
   # Override the render_create_success method to include the user's profile
