@@ -33,7 +33,7 @@ patch '/profile', to: 'profiles#update'
 
 get 'category/:id/posts', to: 'categories#posts'
 
-
+get '/categories', to: 'categories#index'
   resources :posts
 end
 # 

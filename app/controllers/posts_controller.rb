@@ -1,11 +1,18 @@
 
 class PostsController < ApplicationController
-      before_action :authenticate_user!, except: [:index, :show]
+        before_action :authenticate_user!, except: [:index, :show]
   
+    # def index
+    #   @posts = Post.all
+    # end
     def index
       @posts = Post.all
+    
+      respond_to do |format|
+        format.json { render json: @posts }
+      end
     end
-
+    
     def category_posts
       category = Category.find(params[:category_id])
       posts = category.posts
@@ -57,8 +64,12 @@ class PostsController < ApplicationController
     
     
       private
+# def post_params
+#   params.permit(:content, :image, :title, :category_id)  # Change :category to :category_id
+# end
 def post_params
-  params.permit(:content, :image, :title, :category_id)  # Change :category to :category_id
+  params.require(:post).permit(:title, :content, :category_id, :images)
 end
+
   end
-  #  ///////
+  
