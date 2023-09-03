@@ -2,14 +2,32 @@
 class PostsController < ApplicationController
         before_action :authenticate_user!, except: [:index, :show]
   
+   
     # def index
     #   @posts = Post.all
+    
+    #   respond_to do |format|
+    #     format.json { render json: @posts }
+    #   end
     # end
+
+
     def index
       @posts = Post.all
-    
+  
       respond_to do |format|
-        format.json { render json: @posts }
+        format.json do
+          # Create an array to store the JSON representation of each post
+          posts_data = []
+          @posts.each do |post|
+            post_data = post.as_json
+            if post.image.attached?
+              post_data["image_url"] = rails_blob_path(post.image, only_path: true)
+            end
+            posts_data << post_data
+          end
+          render json: posts_data
+        end
       end
     end
     
@@ -20,25 +38,57 @@ class PostsController < ApplicationController
       render json: posts
     end
   
+   
+    # def show
+    #   @post = Post.find(params[:id])
+    
+    #   respond_to do |format|
+    #     format.html # This is for the HTML format (not needed if you're building a single-page app)
+    #     format.json { render json: @post } # This is for JSON format
+    #   end
+    # end
     def show
       @post = Post.find(params[:id])
+  
+      respond_to do |format|
+        format.html # This is for the HTML format (not needed if you're building a single-page app)
+        format.json do
+          # Include the image URL in the JSON response
+          post_data = @post.as_json
+          if @post.image.attached?
+            post_data["image_url"] = rails_blob_path(@post.image, only_path: true)
+          end
+          render json: post_data
+        end
+      end
     end
+    
   
     def new
       @post = Post.new
     end
-  
- 
+    # @post = current_user.posts.build(post_params)
+    # @image = Image.new(image_params) # Create an Image object
+    # @post.image.attach(params[:images]) if params[:images]
     def create
       @post = current_user.posts.build(post_params)
-      @post.image.attach(params[:image]) if params[:image]
-      
+    
       if @post.save
+        # Handle image attachments if they are present
+        if params[:post][:images].present?
+          params[:post][:images].each do |image|
+            @post.image.attach(image)
+          end
+        end
+    
         redirect_to @post, notice: 'Post was successfully created.'
       else
         render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
       end
     end
+    
+    
+ 
     
     
     def edit
@@ -64,9 +114,7 @@ class PostsController < ApplicationController
     
     
       private
-# def post_params
-#   params.permit(:content, :image, :title, :category_id)  # Change :category to :category_id
-# end
+
 def post_params
   params.require(:post).permit(:title, :content, :category_id, :images)
 end
