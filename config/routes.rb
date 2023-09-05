@@ -2,11 +2,6 @@
 Rails.application.routes.draw do
   # Define your other routes here
 
-  # namespace :auth do
-  #   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-  #     registrations: 'auth/registrations'
-  #   }
-  # end
 
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
         registrations: 'auth/registrations'
@@ -30,6 +25,10 @@ Rails.application.routes.draw do
 #route for upddtaing profile
 patch '/profile', to: 'profiles#update'
 
+
+# routes.rb
+# Add a new route to retrieve like and dislike counts for a post
+get '/posts/:post_id/like_dislike_counts', to: 'posts#like_dislike_counts', as: :post_like_dislike_counts
 
 get 'category/:id/posts', to: 'categories#posts'
 

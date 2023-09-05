@@ -111,8 +111,26 @@ class PostsController < ApplicationController
       redirect_to posts_url, notice: 'Post was successfully destroyed.'
     end
   
+    # Action to retrieve like and dislike counts for a post
+  def like_dislike_counts
+    @post = Post.find(params[:post_id])
+    likes_count = @post.post_likes.count
+    dislikes_count = @post.dislikes_count # Assuming you have a similar method for dislikes count
+
+    render json: {
+      likesCount: likes_count,
+      dislikesCount: dislikes_count
+    }
+  end
     
-    
+  # def like_dislike_counts
+  #   @post = Post.find(params[:post_id])
+  #   dislikes = @post.dislikes_count
+  #   # Other logic
+  # end
+
+
+
       private
 
 def post_params
