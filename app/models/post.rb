@@ -4,7 +4,7 @@ class Post < ApplicationRecord
     belongs_to :category
     has_many :comments, dependent: :destroy
     has_many :post_likes
-
+   
 
     def thumbnail
       if image.attached?
