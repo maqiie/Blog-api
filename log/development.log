@@ -35092,3 +35092,319 @@ getter and setter.
 
 Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
  (called from <top (required)> at /home/markpaul/projects/Blog-api/app/models/user.rb:3)
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/markpaul/.rbenv/versions/2.7.6/lib/ruby/gems/2.7.0/gems/actionpack-7.0.7/lib/action_controller/railtie.rb:80)
+Started GET "/categories" for ::1 at 2023-09-12 16:21:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 17703)
+
+
+Started GET "/categories" for ::1 at 2023-09-12 16:21:10 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1683)
+
+
+Started GET "/posts" for ::1 at 2023-09-12 16:21:11 +0300
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:13:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+Completed 200 OK in 120ms (Views: 0.7ms | ActiveRecord: 3.0ms | Allocations: 80309)
+
+
+Started GET "/posts" for ::1 at 2023-09-12 16:21:12 +0300
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:13:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4d380e307b798ac01107c4218eb0a49cb7962f8d/dev.jpeg" for ::1 at 2023-09-12 16:21:12 +0300
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 9980)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2765c86fde880db00314c579707b4b60983c3168/heartbeat.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26ae00c237df1af4c888a81fb37529e03bd96d6b/abigail-keenan-8-s5QuUBtyM-unsplash.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2765c86fde880db00314c579707b4b60983c3168", "filename"=>"heartbeat"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4d380e307b798ac01107c4218eb0a49cb7962f8d", "filename"=>"dev"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26ae00c237df1af4c888a81fb37529e03bd96d6b", "filename"=>"abigail-keenan-8-s5QuUBtyM-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (39.4ms) [0m[34mGenerated URL for file at key: o1a8tmmrcbkwji2foznur1pxomgy (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiekZoT0hSdGJYSmpZbXQzYW1reVptOTZiblZ5TVhCNGIyMW5lUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1obFlYSjBZbVZoZEM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhsWVhKMFltVmhkQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTA5LTEyVDEzOjI2OjEyLjE5MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c0ba50d4a4f2756974d001831990b72eda9f78eb/heartbeat.jpg)[0m
+[36m  Disk Storage (39.9ms) [0m[34mGenerated URL for file at key: 8a2fchymq9smlsv20x66dm4zzs0n (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR0V5Wm1Ob2VXMXhPWE50YkhOMk1qQjROalprYlRSNmVuTXdiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGRpNXFjR1ZuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlka1pYWXVhbkJsWndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMTkyWiIsInB1ciI6ImJsb2Jfa2V5In19--dafa4fb00704e7e788a997537305e6e1157e10ba/dev.jpeg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiekZoT0hSdGJYSmpZbXQzYW1reVptOTZiblZ5TVhCNGIyMW5lUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1obFlYSjBZbVZoZEM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhsWVhKMFltVmhkQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTA5LTEyVDEzOjI2OjEyLjE5MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c0ba50d4a4f2756974d001831990b72eda9f78eb/heartbeat.jpg
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR0V5Wm1Ob2VXMXhPWE50YkhOMk1qQjROalprYlRSNmVuTXdiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGRpNXFjR1ZuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlka1pYWXVhbkJsWndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMTkyWiIsInB1ciI6ImJsb2Jfa2V5In19--dafa4fb00704e7e788a997537305e6e1157e10ba/dev.jpeg
+Completed 302 Found in 48ms (ActiveRecord: 0.1ms | Allocations: 32485)
+
+
+Completed 302 Found in 47ms (ActiveRecord: 0.4ms | Allocations: 32583)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3b9cab1dc11654b515468a77a631262740db4db4/brano-Mm1VIPqd0OA-unsplash.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+[36m  Disk Storage (38.6ms) [0m[34mGenerated URL for file at key: rr6f0qhvzirzxtzrvnrxni8t8u7w (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbkkyWmpCeGFIWjZhWEo2ZUhSNmNuWnVjbmh1YVRoME9IVTNkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GaWFXZGhhV3d0YTJWbGJtRnVMVGd0Y3pWUmRWVkNkSGxOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZV0pwWjJGcGJDMXJaV1Z1WVc0dE9DMXpOVkYxVlVKMGVVMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMjEyWiIsInB1ciI6ImJsb2Jfa2V5In19--627f911902b1d6029f9a5c8493490e97c6aaa045/abigail-keenan-8-s5QuUBtyM-unsplash.jpg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbkkyWmpCeGFIWjZhWEo2ZUhSNmNuWnVjbmh1YVRoME9IVTNkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GaWFXZGhhV3d0YTJWbGJtRnVMVGd0Y3pWUmRWVkNkSGxOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZV0pwWjJGcGJDMXJaV1Z1WVc0dE9DMXpOVkYxVlVKMGVVMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMjEyWiIsInB1ciI6ImJsb2Jfa2V5In19--627f911902b1d6029f9a5c8493490e97c6aaa045/abigail-keenan-8-s5QuUBtyM-unsplash.jpg
+Completed 302 Found in 42ms (ActiveRecord: 0.5ms | Allocations: 23922)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiekZoT0hSdGJYSmpZbXQzYW1reVptOTZiblZ5TVhCNGIyMW5lUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1obFlYSjBZbVZoZEM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhsWVhKMFltVmhkQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTA5LTEyVDEzOjI2OjEyLjE5MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c0ba50d4a4f2756974d001831990b72eda9f78eb/heartbeat.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR0V5Wm1Ob2VXMXhPWE50YkhOMk1qQjROalprYlRSNmVuTXdiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGRpNXFjR1ZuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlka1pYWXVhbkJsWndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMTkyWiIsInB1ciI6ImJsb2Jfa2V5In19--dafa4fb00704e7e788a997537305e6e1157e10ba/dev.jpeg" for ::1 at 2023-09-12 16:21:12 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbkkyWmpCeGFIWjZhWEo2ZUhSNmNuWnVjbmh1YVRoME9IVTNkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GaWFXZGhhV3d0YTJWbGJtRnVMVGd0Y3pWUmRWVkNkSGxOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZV0pwWjJGcGJDMXJaV1Z1WVc0dE9DMXpOVkYxVlVKMGVVMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMjEyWiIsInB1ciI6ImJsb2Jfa2V5In19--627f911902b1d6029f9a5c8493490e97c6aaa045/abigail-keenan-8-s5QuUBtyM-unsplash.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3b9cab1dc11654b515468a77a631262740db4db4", "filename"=>"brano-Mm1VIPqd0OA-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 20ok14w0241h8phr9kxkyqhos65c (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNakJ2YXpFMGR6QXlOREZvT0hCb2NqbHJlR3Q1Y1dodmN6WTFZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KeVlXNXZMVTF0TVZaSlVIRmtNRTlCTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbkpoYm04dFRXMHhWa2xRY1dRd1QwRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMjI0WiIsInB1ciI6ImJsb2Jfa2V5In19--f84f3d8f3c34c56b6717522d28abd7ae2bec351b/brano-Mm1VIPqd0OA-unsplash.jpg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNakJ2YXpFMGR6QXlOREZvT0hCb2NqbHJlR3Q1Y1dodmN6WTFZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KeVlXNXZMVTF0TVZaSlVIRmtNRTlCTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbkpoYm04dFRXMHhWa2xRY1dRd1QwRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMjI0WiIsInB1ciI6ImJsb2Jfa2V5In19--f84f3d8f3c34c56b6717522d28abd7ae2bec351b/brano-Mm1VIPqd0OA-unsplash.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1323)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dev"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNakJ2YXpFMGR6QXlOREZvT0hCb2NqbHJlR3Q1Y1dodmN6WTFZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KeVlXNXZMVTF0TVZaSlVIRmtNRTlCTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbkpoYm04dFRXMHhWa2xRY1dRd1QwRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6MjY6MTIuMjI0WiIsInB1ciI6ImJsb2Jfa2V5In19--f84f3d8f3c34c56b6717522d28abd7ae2bec351b/brano-Mm1VIPqd0OA-unsplash.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"heartbeat"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 146)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"abigail-keenan-8-s5QuUBtyM-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"brano-Mm1VIPqd0OA-unsplash"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01d0d9da8009127044b141298508bbfad2eea435/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01d0d9da8009127044b141298508bbfad2eea435", "filename"=>"peter-scherbatykh-VzQWVqHOCaE-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: xs0vvl5ayhmpfmos2n89qi91vby7 (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlSE13ZG5ac05XRjVhRzF3Wm0xdmN6SnVPRGx4YVRreGRtSjVOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGRHVnlMWE5qYUdWeVltRjBlV3RvTFZaNlVWZFdjVWhQUTJGRkxYVnVjM0JzWVhOb0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY0dWMFpYSXRjMk5vWlhKaVlYUjVhMmd0Vm5wUlYxWnhTRTlEWVVVdGRXNXpjR3hoYzJndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wOS0xMlQxMzoyNjoxMi4zNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--1c97dfa47c3ebd7f63ad430fdeed46b813aedb79/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlSE13ZG5ac05XRjVhRzF3Wm0xdmN6SnVPRGx4YVRreGRtSjVOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGRHVnlMWE5qYUdWeVltRjBlV3RvTFZaNlVWZFdjVWhQUTJGRkxYVnVjM0JzWVhOb0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY0dWMFpYSXRjMk5vWlhKaVlYUjVhMmd0Vm5wUlYxWnhTRTlEWVVVdGRXNXpjR3hoYzJndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wOS0xMlQxMzoyNjoxMi4zNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--1c97dfa47c3ebd7f63ad430fdeed46b813aedb79/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1103)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlSE13ZG5ac05XRjVhRzF3Wm0xdmN6SnVPRGx4YVRreGRtSjVOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGRHVnlMWE5qYUdWeVltRjBlV3RvTFZaNlVWZFdjVWhQUTJGRkxYVnVjM0JzWVhOb0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY0dWMFpYSXRjMk5vWlhKaVlYUjVhMmd0Vm5wUlYxWnhTRTlEWVVVdGRXNXpjR3hoYzJndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wOS0xMlQxMzoyNjoxMi4zNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--1c97dfa47c3ebd7f63ad430fdeed46b813aedb79/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg" for ::1 at 2023-09-12 16:21:12 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"peter-scherbatykh-VzQWVqHOCaE-unsplash"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+Started POST "/posts/1/like" for ::1 at 2023-09-12 16:21:16 +0300
+Processing by PostLikesController#like as HTML
+  Parameters: {"post_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "markpaulmuthaura1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_likes_controller.rb:14:in `like'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_likes_controller.rb:15:in `like'
+  [1m[36mPostLike Create (0.2ms)[0m  [1m[32mINSERT INTO "post_likes" ("user_id", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["post_id", 1], ["created_at", "2023-09-12 13:21:16.635548"], ["updated_at", "2023-09-12 13:21:16.635548"]]
+  ↳ app/controllers/post_likes_controller.rb:15:in `like'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_likes_controller.rb:15:in `like'
+  [1m[36mPostLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_likes" WHERE "post_likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/controllers/post_likes_controller.rb:18:in `like'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 0.2ms | ActiveRecord: 6.9ms | Allocations: 44996)
+
+
+Started GET "/posts/1/likes" for ::1 at 2023-09-12 16:21:16 +0300
+Processing by PostsController#likes as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `likes'
+  [1m[36mPostLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_likes" WHERE "post_likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:95:in `likes'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1115)
+
+
+Started GET "/categories" for ::1 at 2023-09-12 16:35:40 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 1820)
+
+
+Started GET "/categories" for ::1 at 2023-09-12 16:35:40 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 1683)
+
+
+Started GET "/posts" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:13:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+Completed 200 OK in 31ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 9244)
+
+
+Started GET "/posts" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by PostsController#index as JSON
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:13:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2765c86fde880db00314c579707b4b60983c3168/heartbeat.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4d380e307b798ac01107c4218eb0a49cb7962f8d/dev.jpeg" for ::1 at 2023-09-12 16:35:46 +0300
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2765c86fde880db00314c579707b4b60983c3168", "filename"=>"heartbeat"}
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3b9cab1dc11654b515468a77a631262740db4db4/brano-Mm1VIPqd0OA-unsplash.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3b9cab1dc11654b515468a77a631262740db4db4", "filename"=>"brano-Mm1VIPqd0OA-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 20ok14w0241h8phr9kxkyqhos65c (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNakJ2YXpFMGR6QXlOREZvT0hCb2NqbHJlR3Q1Y1dodmN6WTFZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KeVlXNXZMVTF0TVZaSlVIRmtNRTlCTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbkpoYm04dFRXMHhWa2xRY1dRd1QwRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMTUwWiIsInB1ciI6ImJsb2Jfa2V5In19--da00094a69a8b30f169f4052e7068d5d8018d3ce/brano-Mm1VIPqd0OA-unsplash.jpg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNakJ2YXpFMGR6QXlOREZvT0hCb2NqbHJlR3Q1Y1dodmN6WTFZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KeVlXNXZMVTF0TVZaSlVIRmtNRTlCTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbkpoYm04dFRXMHhWa2xRY1dRd1QwRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMTUwWiIsInB1ciI6ImJsb2Jfa2V5In19--da00094a69a8b30f169f4052e7068d5d8018d3ce/brano-Mm1VIPqd0OA-unsplash.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms | Allocations: 1256)
+
+
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26ae00c237df1af4c888a81fb37529e03bd96d6b/abigail-keenan-8-s5QuUBtyM-unsplash.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15:in `block (3 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:16:in `block (3 levels) in index'
+Completed 200 OK in 67ms (Views: 1.1ms | ActiveRecord: 2.3ms | Allocations: 15998)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNakJ2YXpFMGR6QXlOREZvT0hCb2NqbHJlR3Q1Y1dodmN6WTFZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KeVlXNXZMVTF0TVZaSlVIRmtNRTlCTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbkpoYm04dFRXMHhWa2xRY1dRd1QwRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMTUwWiIsInB1ciI6ImJsb2Jfa2V5In19--da00094a69a8b30f169f4052e7068d5d8018d3ce/brano-Mm1VIPqd0OA-unsplash.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: o1a8tmmrcbkwji2foznur1pxomgy (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiekZoT0hSdGJYSmpZbXQzYW1reVptOTZiblZ5TVhCNGIyMW5lUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1obFlYSjBZbVZoZEM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhsWVhKMFltVmhkQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTA5LTEyVDEzOjQwOjQ2LjE2MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3639dda6dd277fa46eb3a7e94a16ce3719d23197/heartbeat.jpg)[0m
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4d380e307b798ac01107c4218eb0a49cb7962f8d", "filename"=>"dev"}
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiekZoT0hSdGJYSmpZbXQzYW1reVptOTZiblZ5TVhCNGIyMW5lUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1obFlYSjBZbVZoZEM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhsWVhKMFltVmhkQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTA5LTEyVDEzOjQwOjQ2LjE2MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3639dda6dd277fa46eb3a7e94a16ce3719d23197/heartbeat.jpg
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 302 Found in 29ms (ActiveRecord: 0.1ms | Allocations: 7929)
+
+
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 8a2fchymq9smlsv20x66dm4zzs0n (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR0V5Wm1Ob2VXMXhPWE50YkhOMk1qQjROalprYlRSNmVuTXdiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGRpNXFjR1ZuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlka1pYWXVhbkJsWndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMTgyWiIsInB1ciI6ImJsb2Jfa2V5In19--1ce137df9cec10256c5029d54fa4913465839571/dev.jpeg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR0V5Wm1Ob2VXMXhPWE50YkhOMk1qQjROalprYlRSNmVuTXdiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGRpNXFjR1ZuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlka1pYWXVhbkJsWndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMTgyWiIsInB1ciI6ImJsb2Jfa2V5In19--1ce137df9cec10256c5029d54fa4913465839571/dev.jpeg
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms | Allocations: 1762)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"brano-Mm1VIPqd0OA-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiekZoT0hSdGJYSmpZbXQzYW1reVptOTZiblZ5TVhCNGIyMW5lUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1obFlYSjBZbVZoZEM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmhsWVhKMFltVmhkQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIzLTA5LTEyVDEzOjQwOjQ2LjE2MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3639dda6dd277fa46eb3a7e94a16ce3719d23197/heartbeat.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"heartbeat"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26ae00c237df1af4c888a81fb37529e03bd96d6b", "filename"=>"abigail-keenan-8-s5QuUBtyM-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: rr6f0qhvzirzxtzrvnrxni8t8u7w (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbkkyWmpCeGFIWjZhWEo2ZUhSNmNuWnVjbmh1YVRoME9IVTNkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GaWFXZGhhV3d0YTJWbGJtRnVMVGd0Y3pWUmRWVkNkSGxOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZV0pwWjJGcGJDMXJaV1Z1WVc0dE9DMXpOVkYxVlVKMGVVMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMjAzWiIsInB1ciI6ImJsb2Jfa2V5In19--11cb18ee583e20c26fca1ea6ee3cb4c49e045ea1/abigail-keenan-8-s5QuUBtyM-unsplash.jpg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbkkyWmpCeGFIWjZhWEo2ZUhSNmNuWnVjbmh1YVRoME9IVTNkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GaWFXZGhhV3d0YTJWbGJtRnVMVGd0Y3pWUmRWVkNkSGxOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZV0pwWjJGcGJDMXJaV1Z1WVc0dE9DMXpOVkYxVlVKMGVVMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMjAzWiIsInB1ciI6ImJsb2Jfa2V5In19--11cb18ee583e20c26fca1ea6ee3cb4c49e045ea1/abigail-keenan-8-s5QuUBtyM-unsplash.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1098)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR0V5Wm1Ob2VXMXhPWE50YkhOMk1qQjROalprYlRSNmVuTXdiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SbGRpNXFjR1ZuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlka1pYWXVhbkJsWndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMTgyWiIsInB1ciI6ImJsb2Jfa2V5In19--1ce137df9cec10256c5029d54fa4913465839571/dev.jpeg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"dev"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbkkyWmpCeGFIWjZhWEo2ZUhSNmNuWnVjbmh1YVRoME9IVTNkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GaWFXZGhhV3d0YTJWbGJtRnVMVGd0Y3pWUmRWVkNkSGxOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZV0pwWjJGcGJDMXJaV1Z1WVc0dE9DMXpOVkYxVlVKMGVVMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDktMTJUMTM6NDA6NDYuMjAzWiIsInB1ciI6ImJsb2Jfa2V5In19--11cb18ee583e20c26fca1ea6ee3cb4c49e045ea1/abigail-keenan-8-s5QuUBtyM-unsplash.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"abigail-keenan-8-s5QuUBtyM-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01d0d9da8009127044b141298508bbfad2eea435/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01d0d9da8009127044b141298508bbfad2eea435", "filename"=>"peter-scherbatykh-VzQWVqHOCaE-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: xs0vvl5ayhmpfmos2n89qi91vby7 (http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlSE13ZG5ac05XRjVhRzF3Wm0xdmN6SnVPRGx4YVRreGRtSjVOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGRHVnlMWE5qYUdWeVltRjBlV3RvTFZaNlVWZFdjVWhQUTJGRkxYVnVjM0JzWVhOb0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY0dWMFpYSXRjMk5vWlhKaVlYUjVhMmd0Vm5wUlYxWnhTRTlEWVVVdGRXNXpjR3hoYzJndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wOS0xMlQxMzo0MDo0Ni4zODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--69e1070774ef600f869e5cc3f8e97df034b84403/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg)[0m
+Redirected to http://localhost:3001/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlSE13ZG5ac05XRjVhRzF3Wm0xdmN6SnVPRGx4YVRreGRtSjVOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGRHVnlMWE5qYUdWeVltRjBlV3RvTFZaNlVWZFdjVWhQUTJGRkxYVnVjM0JzWVhOb0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY0dWMFpYSXRjMk5vWlhKaVlYUjVhMmd0Vm5wUlYxWnhTRTlEWVVVdGRXNXpjR3hoYzJndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wOS0xMlQxMzo0MDo0Ni4zODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--69e1070774ef600f869e5cc3f8e97df034b84403/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1098)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlSE13ZG5ac05XRjVhRzF3Wm0xdmN6SnVPRGx4YVRreGRtSjVOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGRHVnlMWE5qYUdWeVltRjBlV3RvTFZaNlVWZFdjVWhQUTJGRkxYVnVjM0JzWVhOb0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY0dWMFpYSXRjMk5vWlhKaVlYUjVhMmd0Vm5wUlYxWnhTRTlEWVVVdGRXNXpjR3hoYzJndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wOS0xMlQxMzo0MDo0Ni4zODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--69e1070774ef600f869e5cc3f8e97df034b84403/peter-scherbatykh-VzQWVqHOCaE-unsplash.jpg" for ::1 at 2023-09-12 16:35:46 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"peter-scherbatykh-VzQWVqHOCaE-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
