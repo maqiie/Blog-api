@@ -1,16 +1,7 @@
 
 class PostsController < ApplicationController
-        before_action :authenticate_user!, except: [:index, :show]
+         before_action :authenticate_user!, except: [:index, :show, :likes]
   
-   
-    # def index
-    #   @posts = Post.all
-    
-    #   respond_to do |format|
-    #     format.json { render json: @posts }
-    #   end
-    # end
-
 
     def index
       @posts = Post.all
@@ -39,14 +30,7 @@ class PostsController < ApplicationController
     end
   
    
-    # def show
-    #   @post = Post.find(params[:id])
-    
-    #   respond_to do |format|
-    #     format.html # This is for the HTML format (not needed if you're building a single-page app)
-    #     format.json { render json: @post } # This is for JSON format
-    #   end
-    # end
+
     def show
       @post = Post.find(params[:id])
   
@@ -67,9 +51,7 @@ class PostsController < ApplicationController
     def new
       @post = Post.new
     end
-    # @post = current_user.posts.build(post_params)
-    # @image = Image.new(image_params) # Create an Image object
-    # @post.image.attach(params[:images]) if params[:images]
+   
     def create
       @post = current_user.posts.build(post_params)
     
@@ -87,9 +69,7 @@ class PostsController < ApplicationController
       end
     end
     
-    
- 
-    
+  
     
     def edit
       @post = current_user.posts.find(params[:id])
@@ -110,24 +90,26 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to posts_url, notice: 'Post was successfully destroyed.'
     end
+    def likes
+      post = Post.find(params[:id])
+      likes_count = post.post_likes.count
   
-    # Action to retrieve like and dislike counts for a post
-  def like_dislike_counts
-    @post = Post.find(params[:post_id])
-    likes_count = @post.post_likes.count
-    dislikes_count = @post.dislikes_count # Assuming you have a similar method for dislikes count
-
-    render json: {
-      likesCount: likes_count,
-      dislikesCount: dislikes_count
-    }
-  end
+      render json: {
+        likesCount: likes_count
+      }
+    end
+  
+    def dislikes
+      post = Post.find(params[:id])
+      dislikes_count = post.dislikes_count
+  
+      render json: {
+        dislikesCount: dislikes_count
+      }
+    end
+  
     
-  # def like_dislike_counts
-  #   @post = Post.find(params[:post_id])
-  #   dislikes = @post.dislikes_count
-  #   # Other logic
-  # end
+
 
 
 

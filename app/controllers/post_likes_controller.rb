@@ -1,15 +1,27 @@
 class PostLikesController < ApplicationController
-  before_action :authenticate_user!
+   before_action :authenticate_user!
 
+  # def like
+  #   post = Post.find(params[:post_id])
+  #   post_like = post.post_likes.create(user: current_user)
+  #   if post_like.persisted?
+  #     render json: { message: 'Post liked successfully' }
+  #   else
+  #     render json: { message: 'Error liking post' }, status: :unprocessable_entity
+  #   end
+  # end
   def like
     post = Post.find(params[:post_id])
     post_like = post.post_likes.create(user: current_user)
+    
     if post_like.persisted?
-      render json: { message: 'Post liked successfully' }
+      like_count = post.post_likes.count
+      render json: { message: 'Post liked successfully', like_count: like_count }
     else
       render json: { message: 'Error liking post' }, status: :unprocessable_entity
     end
   end
+  
 
   def dislike
     post = Post.find(params[:post_id])

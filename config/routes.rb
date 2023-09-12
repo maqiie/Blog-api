@@ -25,10 +25,16 @@ Rails.application.routes.draw do
 #route for upddtaing profile
 patch '/profile', to: 'profiles#update'
 
+# config/routes.rb
+resources :posts do
+  member do
+    post 'like', to: 'post_likes#like'
+    post 'dislike', to: 'post_likes#dislike'
+    get 'likes', to: 'posts#likes' # Route to fetch likes only
+    get 'dislikes', to: 'posts#dislikes'
+  end
+end
 
-# routes.rb
-# Add a new route to retrieve like and dislike counts for a post
-get '/posts/:post_id/like_dislike_counts', to: 'posts#like_dislike_counts', as: :post_like_dislike_counts
 
 get 'category/:id/posts', to: 'categories#posts'
 
