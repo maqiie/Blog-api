@@ -13,11 +13,12 @@ Rails.application.routes.draw do
 
   # Define a custom route to create a comment for a specific post using POST
   post '/posts/:post_id/comments', to: 'comments#create', as: :create_post_comment
+  # delete '/posts/:post_id/comments', to: 'comment/destroy', as: :delete_comment
+  delete '/posts/:post_id/comments', to: 'comments#destroy', as: :delete_comment
 
   # Comments like and dislike routes
   post '/posts/:post_id/comments/:comment_id/like', to: 'comment_likes#like', as: :like_comment
   post '/posts/:post_id/comments/:comment_id/dislike', to: 'comment_likes#dislike', as: :dislike_comment
-
   # Post like and dislikes
   post '/posts/:post_id/like', to: 'post_likes#like', as: :like_post
   post '/posts/:post_id/dislike', to: 'post_likes#dislike', as: :dislike_post
