@@ -23,6 +23,9 @@ delete '/posts/:post_id/comments/:id', to: 'comments#destroy', as: :delete_comme
   # Comments like and dislike routes
   post '/posts/:post_id/comments/:comment_id/like', to: 'comment_likes#like', as: :like_comment
   post '/posts/:post_id/comments/:comment_id/dislike', to: 'comment_likes#dislike', as: :dislike_comment
+  
+get '/posts/:post_id/comments/:comment_id/likes', to: 'comment_likes#show', as: 'comment_likes'
+
   # Post like and dislikes
   post '/posts/:post_id/like', to: 'post_likes#like', as: :like_post
   post '/posts/:post_id/dislike', to: 'post_likes#dislike', as: :dislike_post

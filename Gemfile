@@ -8,6 +8,8 @@ gem 'rack-cors'
 gem "jsonapi-serializer"
 gem 'cancancan'
 gem 'mini_magick'
+gem 'pg'
+
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
