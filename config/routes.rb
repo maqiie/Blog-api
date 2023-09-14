@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       }
   # Define your other routes here
 
+
+  get '/users/:user_id/posts', to: 'posts#user_posts', as: :user_posts
+
   # Define a custom route to get comments for a specific post using GET
   get '/posts/:post_id/comments', to: 'comments#index', as: :post_comments
 
@@ -29,6 +32,8 @@ get '/posts/:post_id/comments/:comment_id/likes', to: 'comment_likes#show', as: 
   # Post like and dislikes
   post '/posts/:post_id/like', to: 'post_likes#like', as: :like_post
   post '/posts/:post_id/dislike', to: 'post_likes#dislike', as: :dislike_post
+# config/routes.rb
+get '/posts/:post_id/likes', to: 'likes#index', as: :post_likes
 
 #route for upddtaing profile
 patch '/profile', to: 'profiles#update'

@@ -29,7 +29,11 @@ class PostsController < ApplicationController
       render json: posts
     end
   
-   
+    def user_posts
+      @user = User.find(params[:user_id])
+      @posts = @user.posts
+      render json: @posts
+    end
 
     def show
       @post = Post.find(params[:id])

@@ -15,4 +15,12 @@ class ApplicationController < ActionController::Base
   def set_cors_headers
     response.headers['Access-Control-Expose-Headers'] = 'Authorization'
   end
+
+
+  # # Custom action to fetch a user's posts
+  # def posts
+  #   @user = User.find(params[:id])
+  #   @posts = @user.posts # Assuming you have a posts association on your User model
+  #   render json: @posts # You can customize this response as needed
+  # end
 end
