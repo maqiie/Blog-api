@@ -1,17 +1,20 @@
 class CommentLikesController < ApplicationController
     before_action :authenticate_user!
 
+   
     def show
-      # Fetch the comment likes data based on the post_id and comment_id
       post_id = params[:post_id]
       comment_id = params[:comment_id]
       
-      # Fetch comment likes data here based on post_id and comment_id
-      @comment_likes = CommentLike.where(post_id: post_id, comment_id: comment_id)
-  
-      # Respond with JSON data
+      # Retrieve the likes count for the specified comment
+      likes_count = CommentLike.where(comment_id: comment_id).count
+      
+      # You can customize the JSON response structure as needed
+      response_data = { likesCount: likes_count }
+      
       respond_to do |format|
-        format.json { render json: @comment_likes }
+        format.html { render body: nil, status: :not_acceptable }
+        format.json { render json: response_data }
       end
     end
   
