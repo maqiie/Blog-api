@@ -21,7 +21,7 @@ end
       render json: { message: 'Error liking post' }, status: :unprocessable_entity
     end
   end
-  
+  # iiiiiiii
 
   def dislike
     post = Post.find(params[:post_id])
