@@ -28,6 +28,13 @@ class PostsController < ApplicationController
   
       render json: posts
     end
+   
+      def posts
+        @category = Category.find(params[:id])
+        @posts = @category.posts
+        render json: @posts
+      end
+        
   
     def user_posts
       @user = User.find(params[:user_id])
@@ -94,6 +101,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to posts_url, notice: 'Post was successfully destroyed.'
     end
+    
     def likes
       post = Post.find(params[:id])
       likes_count = post.post_likes.count

@@ -9,7 +9,19 @@ Rails.application.routes.draw do
   # Define your other routes here
 
 
-  get '/users/:user_id/posts', to: 'posts#user_posts', as: :user_posts
+  get '/users/:user_id/posts', to: 'posts#user_posts', as: :user_post
+
+# Route to delete a user's post
+delete '/users/:user_id/posts/:id', to: 'posts#destroy', as: :delete_user_post
+# get 'category/:id/posts', to: 'categories#posts', as: :category_posts
+# get '/categories/:id/posts', to: 'categories#posts', as: :category_posts
+# get '/posts/category/:name', to: 'categories#posts_by_name', as: :category_posts
+
+# config/routes.rb
+
+get '/categories/:name', to: 'categories#show', as: 'category'
+
+
 
   # Define a custom route to get comments for a specific post using GET
   get '/posts/:post_id/comments', to: 'comments#index', as: :post_comments
@@ -53,5 +65,9 @@ get 'category/:id/posts', to: 'categories#posts'
 
 get '/categories', to: 'categories#index'
   resources :posts
+
+  
+resources :categories, only: [:index]
+
 end
 # 
