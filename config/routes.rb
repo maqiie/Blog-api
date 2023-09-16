@@ -13,14 +13,8 @@ Rails.application.routes.draw do
 
 # Route to delete a user's post
 delete '/users/:user_id/posts/:id', to: 'posts#destroy', as: :delete_user_post
-# get 'category/:id/posts', to: 'categories#posts', as: :category_posts
-# get '/categories/:id/posts', to: 'categories#posts', as: :category_posts
-# get '/posts/category/:name', to: 'categories#posts_by_name', as: :category_posts
 
-# config/routes.rb
-
-get '/categories/:name', to: 'categories#show', as: 'category'
-
+get '/categories/:category_id/posts', to: 'posts#category_posts', as: 'category_posts'
 
 
   # Define a custom route to get comments for a specific post using GET

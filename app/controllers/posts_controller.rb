@@ -3,6 +3,7 @@ class PostsController < ApplicationController
          before_action :authenticate_user!, except: [:index, :show, :likes]
   
 
+
     def index
       @posts = Post.all
   
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
       end
     end
     
+   
     def category_posts
       category = Category.find(params[:category_id])
       posts = category.posts
