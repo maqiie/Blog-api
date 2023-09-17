@@ -6,7 +6,16 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*' # Replace with the specific origin of your client application if needed.
+      resource '*',
+        headers: :any,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head],
+        credentials: false # Set to true if your client sends credentials (e.g., cookies).
+    end
+  end
+  
 
 
   config.active_storage.service = :local
