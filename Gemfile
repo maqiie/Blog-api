@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # ruby "3.1.2"
-gem 'devise'
+# gem 'devise'
 gem 'devise_token_auth'
 gem 'rack-cors'
 gem "jsonapi-serializer"
