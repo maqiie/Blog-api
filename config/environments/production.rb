@@ -8,11 +8,11 @@ Rails.application.configure do
 
   config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins '*' # Replace with the specific origin of your client application if needed.
+      origins 'https://blog-client-git-main-maqiie.vercel.app'
       resource '*',
         headers: :any,
         methods: [:get, :post, :put, :patch, :delete, :options, :head],
-        credentials: false # Set to true if your client sends credentials (e.g., cookies).
+        credentials: true # Set to true if your frontend sends credentials like cookies.
     end
   end
   
