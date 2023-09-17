@@ -199,7 +199,7 @@ DEPENDENCIES
   devise_token_auth
   jsonapi-serializer
   mini_magick
-  pg
+  pg (= 1.5.4)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.7)

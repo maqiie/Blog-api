@@ -8,7 +8,8 @@ gem 'rack-cors'
 gem "jsonapi-serializer"
 gem 'cancancan'
 gem 'mini_magick'
-gem 'pg'
+gem 'pg', '1.5.4'
+
 
 
 
