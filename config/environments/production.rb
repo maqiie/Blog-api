@@ -6,16 +6,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.middleware.insert_before 0, Rack::Cors do
-    allow do
-      origins '*'
-      resource '*',
-        headers: :any,
-        methods: [:get, :post, :put, :patch, :delete, :options, :head],
-        credentials: true # Set to true if your frontend sends credentials like cookies.
-    end
-  end
-  
+
 
 
   config.active_storage.service = :local
@@ -36,9 +27,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  # config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
-
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
