@@ -195,6 +195,7 @@ PLATFORMS
 DEPENDENCIES
   cancancan
   debug
+  devise
   devise_token_auth
   jsonapi-serializer
   mini_magick
