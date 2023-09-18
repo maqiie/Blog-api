@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
-# exit on error
+# Exit on error
 set -o errexit
 
+# Install Bundler gems
 bundle install
- rails db:migrate
-rails rake db:seed
+
+# Run database migrations
+rails db:migrate
+
+# Seed the database
+rails db:seed
