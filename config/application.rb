@@ -54,7 +54,7 @@ module DeviseTokenAuthTwitter
     # end
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'https://blog-client-git-main-maqiie.vercel.app' # Replace with your client's URL
+        origins '*' # Replace with your client's URL
         resource '*',
           headers: :any,
           expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
