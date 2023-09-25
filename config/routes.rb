@@ -43,6 +43,7 @@ get '/posts/:post_id/likes', to: 'likes#index', as: :post_likes
 
 #route for upddtaing profile
 patch '/profile', to: 'profiles#update'
+get '/profile', to: 'profiles#show'
 
 # config/routes.rb
 resources :posts do
