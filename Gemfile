@@ -9,7 +9,8 @@ gem "jsonapi-serializer"
 gem 'cancancan'
 gem 'mini_magick'
 gem 'pg'
-# 
+ruby '2.7.0'
+
 
 
 
